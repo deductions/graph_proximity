@@ -1,0 +1,3 @@
+[submodule "k-shortest-paths"]
+	path = k-shortest-paths
+	url = https://github.com/yan-qi/k-shortest-paths-scala-version.git
