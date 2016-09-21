@@ -16,6 +16,7 @@ class Proximity extends FunSuite {
     println("findPaths:")
 
     val finder = new TopKShortestPaths[Int](graph)
+    println("3 Shortest paths from nodes 4 to 5")
     finder.findPaths(4, 5, 3).foreach(println)
 
     println("proximity:")

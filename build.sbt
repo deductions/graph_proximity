@@ -4,7 +4,7 @@ name := "graph_proximity"
 
 version := "1.0"
 
-scalaVersion := "2.11.7"
+scalaVersion := "2.11.8"
 
 libraryDependencies += "k-shortest-paths-scala-version-" %% "k-shortest-paths-scala-version-" % "1.0"
 

@@ -38,7 +38,11 @@ trait ProximityComputations[T] {
         (node, following) <- node_following_pairs if node != firstNode
       ) yield { edgeWeight(node, following) }
 
-      edgeWeights.foldLeft(1.0) { (acc, w) => acc * w } *
+      println(s"edgeWeights $edgeWeights ")
+
+      edgeWeights.foldLeft(1.0) {
+        (acc, w) =>
+          acc * w } *
         degree(firstNode)
     }
 
@@ -56,16 +60,22 @@ trait ProximityComputations[T] {
     def degree(node: Node): Double = {
       val outNodes = graph.fanOut(node)
       outNodes.foldLeft(0.0) {
-        (acc, nod) => acc + nod.weight
+        (acc, nod) =>
+          println( s"nod $nod ${nod.weight}" )
+          acc + nod.weight
       }
     }
 
     val pathWeights = for (path <- paths) yield {
-      pathWeight(path)
+      val pw = pathWeight(path)
+    	println( s"path $path pathWeight $pw")
+      pw
     }
 
     pathWeights.foldLeft(0.0) {
-      (acc, w) => acc + w
+      (acc, w) =>
+        println( s"acc $acc + $w")
+        acc + w
     }
   }
 
